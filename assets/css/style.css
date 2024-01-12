@@ -1,4 +1,160 @@
-/* A. Tạo base dự án ban đầu */
-/* a1. Đẩy lên Github */
-/* a2. Reset */
-/* a3. Code những thuộc tính chung */
+/* <!-- ===================================A. TẠO BASE DỰ ÁN BAN ĐẦU=================================== --> */
+/* a-1. Đẩy lên Github */
+/* a-2. Reset */
+/* a-3. Code những thuộc tính chung */
+/* a-3-1. Code chung */
+* {
+  box-sizing: border-box;
+}
+
+/* a-3-2. Chuyển 1rem = 10 px (Bình thường 1 rem = 16px) */
+html {
+  font-size: 62.5%;
+}
+
+/* a-3-3. Chuyển lại kích thước font ban đầu */
+body {
+  font-size: 1.6rem;
+  /* a-3-3-1. Cài đặt font chữ mặc định cho toàn web là Poppins, còn chỗ khác thì code riêng */
+  font-family: "Poppins", sans-serif;
+}
+
+/* <!-- ===================================B. HEADER=================================== --> */
+/* b-1: Bỏ gạch chân ở thẻ a đi */
+a {
+  text-decoration: none;
+}
+
+/* b-2: Xoay ngang các phần tử */
+.header .body {
+  display: flex;
+}
+
+/* b-3: Xoay ngang khối nav */
+.nav ul {
+  display: flex;
+}
+
+/* b-4: Đẩy khối Nav & btn sang phải */
+/* Chỉ cần tác động vào khối Nav sang phải, là khối btn phải dịch theo (bài 48.10)*/
+.nav {
+  margin-left: auto;
+}
+
+/* b-5: Nội dung đang bị sát lề, căn lại lề */
+.main-content {
+  width: 1170px;
+  /* Căn cho logo và nội dung vào giữa */
+  margin-left: auto;
+  margin-right: auto;
+  /* Khi co nhỏ web thì nội dung bị che mất, xử lý như sau */
+  /* Muốn khoảng cách hai lề là 24px, thì trừ đi tổng 48px */
+  max-width: calc(100% - 48px);
+}
+
+/* b-6: Tạo style (màu sắc) cho thẻ a ở trong nav */
+.nav a {
+  /* Thêm position: relative để căn gạch chân dưới thẻ a */
+  position: relative;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  /* Căn khoảng cách giữa các phần tử */
+  /* Có thể dùng margin để phân tách phần tử. Tuy nhiên, nên dùng Padding để nâng diện tích tương tác của user hơn */
+  /* Padding trên dưới 8px, trái phải là 21px */
+  padding: 8px 21px;
+}
+
+/* b-7: Tạo hiệu ứng khi user di chuột vào thẻ a nav (Dùng lớp giả hover bài 33) */
+/* Note: khi user click vào thì chữ cũng đậm */
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  /* font-weight: 600; */
+  /* Khi dùng font-weight thì di chuột vào sẽ bị giật giật, nên ta dùng text-shadow để hiệu ứng mượt mà hơn */
+  text-shadow: 1px 0 0 currentColor;
+}
+
+/* b-8: Làm dấu gạch chân dưới chữ Home */
+/* Trước tiên thêm .active vào thẻ li {Home} để tác động, sau khi dùng Javascript thì chỉnh sau */
+/* Để thêm dấu gạch sử dụng kiến thức:: Pseudo Elements - bài 83 */
+.nav li.active a::after {
+  /* Để sử dụng before/after thì ta dùng content - Chuỗi rỗng */
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  /* Thẻ inline thì không set được width height, nên phải chuyển sang Display: block/inline-block thì mới set được */
+  display: block;
+  /* Căn dấu gạch chân nằm ngay dưới thẻ a ở nav - Dùng kiến thức Positon: absolute/relative bài 87.2 */
+  /* Bước 1: Set .nav a có postion: relative */
+  /* Bước 2: set trong dấu gạch chân Postion: Absolute */
+  /* Bước 3: Căn lại trái & dưới */
+  position: absolute;
+  left: 21px;
+  bottom: 6px;
+}
+
+/* b-9: Code thông số chung cho nút bấm*/
+.btn {
+  /* Code cho text */
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  /* Code cho phần nền style */
+  border-radius: 24.5px;
+  background: #171100;
+  /* Thẻ a mặc định là inline - bài 51*/
+  /* Nút bấm đang dính sát lề, căn lại */
+  display: inline-block;
+  padding: 0px 16px;
+  /* Cài đặt chiều cao cho nút bấm */
+  line-height: 50px;
+  /* Độ rộng tối thiểu */
+  min-width: 118px;
+}
+
+/* b-10: Code thuộc tính riêng cho nút bấm ở NAV */
+.header .btn-sign-up {
+  min-width: 144px;
+}
+
+/* b-11: Căn giữa tất cả các phần tử theo trục dọc - trục cross */
+/* Kiến thức align-items 89.3 */
+.header .body {
+  align-items: center;
+  /* Tất cả các phần tử và nút bấm đang dính lên trên */
+  padding: 36px 0 8px;
+}
+
+/* b-12: Đổi màu nền */
+.header {
+  background: #fffcf4;
+}
+
+/* b-13: Ghim thanh điều hướng khi cuộn chuột - Position: sticky (87.6)  */
+/* Tác động vào thẻ có cả class header, và có cả class fixed */
+.header.fixed {
+  position: sticky;
+  /* Muốn khi cuộn chuột, cách lề trên là 8px: 36 - 8 = 28px*/
+  top: -28px;
+}
+
+/* Giãn khoảng cách giữa thẻ a nav với nút bấm cách 70px */
+/* Ban đầu padding chữ là 21px, nên khoảng cách còn lại là 49px  */
+.header .action {
+  margin-left: 49px;
+}
+
+/* <!-- ===================================C. HERO=================================== --> */
+
+/* <!-- ===================================D. POPULAR=================================== --> */
+
+/* <!-- ===================================E. FEEDBACK=================================== --> */
+
+/* <!-- ===================================F. FEATURES=================================== --> */
+
+/* <!-- ===================================G. BLOG=================================== --> */
+
+/* <!-- ===================================H. FOOTER=================================== --> */

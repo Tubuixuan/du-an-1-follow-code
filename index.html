@@ -3,7 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- A. TẠO BASE DỰ ÁN BAN ĐẦU -->
+    <!-- a-1. Reset HTML -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+
+    <!-- a-2. Chuyển sang file style.css để code thuộc tính chung ban đầu -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- a-3. Thay đổi font chữ (Vào google font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&family=Sen:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Zohalo</title>
   </head>
-  <body></body>
+
+  <!-- Style=height: 10000px để tạo độ rộng, có thanh cuộn -->
+  <body style="height: 10000px">
+    <!-- ===================================B. HEADER=================================== -->
+    <!-- header.header.fixed -->
+    <!-- Thẻ header (thẻ có ngữ nghĩa SEO) | .header (Chưa phần đầu của web) | .fixed (có định thanh điều hướng) -->
+    <header class="header fixed">
+      <!-- .main-content (Để tái sử dụng độ rộng cho toàn trang) -->
+      <div class="main-content">
+        <!-- .body (để xoay gộp và xoay ngang các phần tử) -->
+        <div class="body">
+          <!-- Trong .body có 3 phần tử con: Logo, Nav, button -->
+
+          <!-- b-1: Logo -->
+          <!-- img.img (Thẻ img có class là thẻ img)-->
+          <img src="./assets/img/Logo.svg" alt="Lesson." class="img" />
+
+          <!-- b-2: Navigation -->
+          <!-- nav.nav>ul>li*4>a{Home} -->
+          <nav class="nav">
+            <ul>
+              <li class="active">
+                <a href="#!">Home</a>
+              </li>
+              <li>
+                <a href="#!">Course</a>
+              </li>
+              <li>
+                <a href="#!">Pricing</a>
+              </li>
+              <li>
+                <a href="#!">Reviews</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- b-3: Nút bấm -->
+          <!-- .action>a.btn.btn-sign-up{Sign Up} -->
+          <!-- .btn dùng để code thuộc tính chung | .btn-sign-up code thuộc tính riêng -->
+          <div class="action">
+            <a href="#!" class="btn btn-sign-up">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ===================================C. HERO=================================== -->
+    <!-- ===================================D. POPULAR=================================== -->
+    <!-- ===================================E. FEEDBACK=================================== -->
+    <!-- ===================================F. FEATURES=================================== -->
+    <!-- ===================================G. BLOG=================================== -->
+    <!-- ===================================H. FOOTER=================================== -->
+  </body>
 </html>
