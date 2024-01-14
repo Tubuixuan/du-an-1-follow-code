@@ -148,7 +148,114 @@ a {
 }
 
 /* <!-- ===================================C. HERO=================================== --> */
+/* c-1: Tạo khoảng cách giữa NAV với phần Hero (cách tổng 64px - padding cũ là 8px: còn 56px) */
+.hero {
+  /* margin-top: 56px; - Margin thì không đổ được nền, nên ta dùng Padding */
+  padding-top: 56px 0 65px;
+  background: #fffcf4;
+}
 
+/* c-2: Xoay ngang hai phần ra */
+.hero .body {
+  display: flex;
+}
+
+/* c-3: Căn độ rộng của phần bên trái, tính tỷ lệ % theo độ rộng*/
+.hero .media-block {
+  width: 48%;
+  position: relative;
+}
+
+/* c-4: Căn độ rộng của phần bên phải, tính tỷ lệ % */
+.hero .content-block {
+  width: 52%;
+}
+
+/* c-5: tùy chỉnh lại kích thước của ảnh cho chuẩn, để tránh việc thay ảnh bị vỡ giao diện */
+.hero .media-block .img {
+  width: 470px;
+  height: 685px;
+  object-fit: cover;
+  /* Bo góc cho ảnh */
+  border-radius: 20px;
+}
+
+/* c-6: Căn vị trí của khối trên ảnh nằm trên ảnh cover */
+/* Đặt khối cần thay đổi là "absolute" và đặt khối cha là "relative" */
+/* Khối cha: .hero .media-block */
+.hero .hero-summary {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  /* Cài đặt nền - copy từ fig ma style */
+  width: 270px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+  /* Tạo khoảng cách giữa các phàn tử */
+  padding: 24px;
+}
+
+/* Xoay ngang các phần tử trong item ra */
+.hero-summary .item {
+  display: flex;
+}
+
+/* Tạo hình tròn bọc quanh icon */
+.hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  /* Bo tròn lại */
+  border-radius: 50%;
+  /* Căn giữa tất cả các phần tử */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff9e8;
+}
+
+/* Đổi màu nền cho từng hình tròn nằm dưới */
+/* Bằng việc tạo thêm class riêng cho từng icon 2, 3 */
+/* Đổi màu nền cho icon 2 */
+.hero-summary .icon2 {
+  background-color: #fcefff;
+}
+
+/* Đổi màu nền cho icon 3 */
+.hero-summary .icon3 {
+  background-color: #ebeaff;
+}
+
+/* Tạo khoảng cách giữa text và icon */
+.hero-summary .info {
+  margin-left: 16px;
+}
+
+/* Tạo thuộc tính style cho text ở trên */
+.hero-summary .label {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 186%;
+}
+
+/* Tạo style cho thẻ in đậm ở dưới */
+.hero-summary .title {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 167%; /* 166.667% */
+}
+
+/* Tạo khoảng cách giữa các icon */
+/* .item +.item - Được hiểu là tác động vào item tiếp theo. Không tác động vào class đầu tiên, mà tác động vào các class tiếp theo */
+.hero-summary .item + .item {
+  margin-top: 22px;
+}
+
+/* Căn icon với text nằm giữa ngang nhau */
+.hero-summary .item {
+  align-items: center;
+}
 /* <!-- ===================================D. POPULAR=================================== --> */
 
 /* <!-- ===================================E. FEEDBACK=================================== --> */
