@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+/* Tạo biến cho các thuộc tính dùng đi dùng lại */
+:root {
+  --font-heading: "Sen", sans-serif;
+  --primary-color: #ffb900;
+}
+
 /* a-3-2. Chuyển 1rem = 10 px (Bình thường 1 rem = 16px) */
 html {
   font-size: 62.5%;
@@ -103,7 +109,8 @@ a {
   font-size: 1.6rem;
   font-weight: 600;
   /* Code cho phần nền style */
-  border-radius: 24.5px;
+  /* Border-radius 999px để bán kính bo lớn hẳn lên */
+  border-radius: 999px;
   background: #171100;
   /* Thẻ a mặc định là inline - bài 51*/
   /* Nút bấm đang dính sát lề, căn lại */
@@ -255,6 +262,133 @@ a {
 /* Căn icon với text nằm giữa ngang nhau */
 .hero-summary .item {
   align-items: center;
+}
+
+/* Căn khoảng cách giữa khối trái và khối phải */
+.hero .content-block {
+  width: 52%;
+  padding-left: 130px;
+  padding-top: 64px;
+}
+
+/* Tạo style cho thẻ h1 */
+.hero .heading {
+  color: #171100;
+  font-variant: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: -1.16px;
+}
+
+/* Tạo style cho đoạn văn ở dưới */
+.hero .desc {
+  color: #5f5b53;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.67;
+  /* Tạo khoảng cách bên trên */
+  margin-top: 22px;
+}
+
+/* Tạo khoảng cách cho nhóm nút bấm */
+.hero .cta-group {
+  margin-top: 38px;
+  /* Xoay ngang các phần tử trong nút */
+  display: flex;
+  /* Căn giữa theo trục dọc - tục cross */
+  align-items: center;
+}
+
+/* Tạo style cho nút bấm */
+/* Tạo thêm một class, để code các thuộc tính riêng */
+.hero-cta {
+  min-width: 180px;
+  background-color: var(--primary-color);
+}
+
+/* Thêm thuộc tính hover vào các nút, cho nó mờ hơn đi khi user di chuột đến */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Code thuộc tính cho nút bấm bên phải */
+.hero .watch-video {
+  /* Bỏ viền đi dùng border: none */
+  border: none;
+  background: transparent;
+  display: flex;
+  /* Căn khoảng cách giữa các nút */
+  margin-left: 28px;
+}
+
+/* Tạo style cho background nút */
+.hero .watch-video .icon {
+  /* Căn giữa nó */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+/* Căn giữa Watch video với icon này */
+.hero .watch-video {
+  display: flex;
+  align-items: center;
+}
+
+/* Tạo style cho chữ Watch video và tạo khoảng cách cho nó */
+.hero .watch-video span {
+  margin-left: 14px;
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+}
+
+/* Thêm hình bàn tay khi user di chuột vào */
+.hero .watch-video {
+  cursor: pointer;
+}
+
+/* Tạo khoảng cách giữa dòng dưới và dòng trên */
+/* Tạo thêm class để tác động thuộc tính riêng */
+.hero .desc-recent {
+  margin-top: 48px;
+}
+
+/* Tạo khoảng cách cho dòng cuối cùng */
+.hero .stats strong {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 1.23; /* 122.727% */
+}
+
+/* Tạo khoảng cách giữa dòng chữ in đậm và chữ nhỏ bên cạnh nó */
+.hero .stats strong {
+  margin-left: 15px;
+}
+
+/* Tạo khoảng cách giữa dòng chữ in đậm và chữ nhỏ bên cạnh thứ 2 */
+.hero .stats strong:nth-child(2) {
+  margin-left: 28px;
+}
+
+/* Tạo khoảng cách với dòng chữ ở trên */
+.hero .stats {
+  margin-top: 8px;
+}
+
+/* Khi cuộn chuột xuống thì ảnh chèn lên navigation */
+/* Ta còn để phần header với z-index là 1 (1 là nằm trên tất cả) */
+.header.fixed {
+  z-index: 1;
 }
 /* <!-- ===================================D. POPULAR=================================== --> */
 
