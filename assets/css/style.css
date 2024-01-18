@@ -31,6 +31,16 @@ a {
   text-decoration: none;
 }
 
+/* Code thuộc tính chung cho thẻ h2 */
+.heading-lv2 {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.27; /* 126.316% */
+  letter-spacing: -0.76px;
+}
+
 /* b-2: Xoay ngang các phần tử */
 .header .body {
   display: flex;
@@ -391,6 +401,63 @@ a {
   z-index: 1;
 }
 /* <!-- ===================================D. POPULAR=================================== --> */
+/* Thêm padding vào khoảng trên dưới */
+/* Dùng padding thì nền không bị đổ sát vào chữ như margin */
+.popular {
+  padding: 65px 0;
+  /* Tạo khoảng cách với phần Hero */
+  margin-top: 135px;
+}
+
+/* Tạo style cho tiêu đề h2 */
+/* Tạo kiểu style cho thẻ p */
+.popular-top .desc {
+  margin-top: 16px;
+  width: 458px;
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.67; /* 166.667% */
+}
+
+/* Xoay ngang phần bên trái và bên phải */
+.popular-top {
+  display: flex;
+  /* Căn kịch các phần tử về hai phía */
+  justify-content: space-between;
+  /* Căn giữa phần bên trái và bên phải */
+  align-items: center;
+}
+
+/* Xóa nền của nút bấm */
+.popular-top .control-btn {
+  background: transparent;
+  /* Tạo style cho nút */
+  width: 40px;
+  height: 40px;
+  /* Là hình tròn thì dùng border radius 50% */
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  /* Căn giữa mũi tên */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+/* Xoay ngang nút bấm */
+.popular-top .controls {
+  display: flex;
+  /* Giãn khoảng cách giữa hai nút */
+  gap: 18px;
+}
+
+/* Tạo hiệu ứng khi user click (hover) vào */
+.popular-top .control-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  /* Thêm hình bàn tay vào */
+  cursor: pointer;
+}
 
 /* <!-- ===================================E. FEEDBACK=================================== --> */
 
