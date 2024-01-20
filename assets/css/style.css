@@ -459,6 +459,25 @@ a {
   cursor: pointer;
 }
 
+/* Giãn khoảng cách từ popular 2 với 1 */
+.popular .course-list {
+  margin-top: 55px;
+  /* Xoay ngang phần tử */
+  display: flex;
+  background-color: blue;
+  /* tạo khoảng cách giữa các phần tử */
+  gap: 30px;
+}
+
+/* Căn chỉnh lại vị trí ảnh cho chuẩn */
+.popular .course-item .thumb {
+  width: 100%;
+  border-radius: 12px 12px 0px 0px;
+  height: 278px;
+}
+
+/*  */
+
 /* <!-- ===================================E. FEEDBACK=================================== --> */
 
 /* <!-- ===================================F. FEATURES=================================== --> */
